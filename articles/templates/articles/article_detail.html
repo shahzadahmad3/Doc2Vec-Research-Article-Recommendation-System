@@ -1,0 +1,9 @@
+<h1>{{ article.paper_title }}</h1>
+<p>{{ article.abstract }}</p>
+
+<h2>Recommended Articles: </h2>
+<ul>
+    {% for article in similar_articles %}
+        <li><a href="{% url 'article_detail' article.paper_id %}">{{ article.paper_title }}</a></li>
+    {% endfor %}
+</ul>
